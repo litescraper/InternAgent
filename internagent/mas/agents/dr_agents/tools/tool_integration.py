@@ -1291,7 +1291,7 @@ def search_google(query: str, num_result_pages: int = 10, time_range: str = "d3"
     responses = []
     
     try:
-        url = "https://google.serper.dev/search"
+        url = f'{os.getenv("SERPER_BASE_URL", "https://google.serper.dev").rstrip("/")}/search'
         headers = {
             "X-API-KEY": SERPER_API_KEY,
             "Content-Type": "application/json",

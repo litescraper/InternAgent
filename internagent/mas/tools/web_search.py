@@ -18,7 +18,7 @@ class WebSearch:
         
         # Fetch the results given the URL
         try:
-            url = "https://google.serper.dev/search"
+            url = f'{os.getenv("SERPER_BASE_URL", "https://google.serper.dev").rstrip("/")}/search'
             headers = {
                 "X-API-KEY": self.serper_api_key,
                 "Content-Type": "application/json",

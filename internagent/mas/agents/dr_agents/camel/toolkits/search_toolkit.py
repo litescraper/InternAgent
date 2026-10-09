@@ -524,7 +524,7 @@ class SearchToolkit(BaseToolkit):
         # Fetch the results given the URL
         try:
             if SERPER_API_KEY:  # 优先使用 Serper
-                url = "https://google.serper.dev/search"
+                url = f'{os.getenv("SERPER_BASE_URL", "https://google.serper.dev").rstrip("/")}/search'
                 headers = {
                     "X-API-KEY": SERPER_API_KEY,
                     "Content-Type": "application/json",
